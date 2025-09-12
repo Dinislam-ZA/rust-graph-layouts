@@ -1,0 +1,36 @@
+{
+  "nodes": [
+    {
+      "node_id": 1,
+      "data": {}
+    },
+    {
+      "node_id": 2,
+      "data": {}
+    },
+    {
+      "node_id": 3,
+      "data": {}
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": 1,
+      "source_id": 1,
+      "target_id": 2,
+      "data": {}
+    },
+    {
+      "edge_id": 2,
+      "source_id": 2,
+      "target_id": 3,
+      "data": {}
+    },
+    {
+      "edge_id": 3,
+      "source_id": 3,
+      "target_id": 1,
+      "data": {}
+    }
+  ]
+}
