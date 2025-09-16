@@ -29,7 +29,7 @@ fn main() {
     //println!("{:#?}", graph);
 
     let layout_alg = ForceLayout::new(width, height, graph.size(), iterations);
-    let layout = layout_alg.layout(&graph);
+    let layout = layout_alg.layout(&graph).unwrap();
 
     // TODO: осталось прикрутить отрисовку
     print!("{:#?}", layout);

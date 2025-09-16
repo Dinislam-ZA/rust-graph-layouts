@@ -10,12 +10,12 @@ pub struct GraphLayout {
 }
 
 impl GraphLayout {
-    pub fn new(g: &Graph) -> GraphLayout {
+    pub fn new(g: &Graph, wh_ratio: f32) -> GraphLayout {
         let mut positions = HashMap::new();
         let mut rng = rand::rng();
 
         for node in &g.nodes {
-            let x = rng.random_range(0.0..1.0);
+            let x = rng.random_range(0.0..wh_ratio);
             let y = rng.random_range(0.0..1.0);
             positions.insert(node.node_id, (x, y));
         }
@@ -26,5 +26,5 @@ impl GraphLayout {
 }
 
 pub trait LayoutAlgorithm {
-    fn layout(self, g: &Graph) -> GraphLayout;
+    fn layout(self, g: &Graph) -> Result<GraphLayout, String>;
 }
