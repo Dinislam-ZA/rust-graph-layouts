@@ -69,10 +69,10 @@ impl LayoutAlgorithm for ForceLayout {
                     let x_displacement = repulsion * dx / distance;
                     let y_displacement = repulsion * dy / distance;
 
-                    if i == 1 && j == 2 {
-                        println!("distance - {}", distance);
-                        println!("repulsion {}", repulsion);
-                    }
+                    // if i == 1 && j == 2 {
+                    //     println!("distance - {}", distance);
+                    //     println!("repulsion {}", repulsion);
+                    // }
 
                     forces.entry(*node_i)
                         .and_modify(|f| {
@@ -106,10 +106,10 @@ impl LayoutAlgorithm for ForceLayout {
                 let distance = dist_temp.sqrt();
                 let attraction = distance.powf(2.0) / self.k;
 
-                if node_i == 1 && node_j == 2 {
-                    println!("distance - {}", distance);
-                    println!("attraction {}", attraction);
-                }
+                // if node_i == 1 && node_j == 2 {
+                //     println!("distance - {}", distance);
+                //     println!("attraction {}", attraction);
+                // }
 
                 let x_displacement = attraction * dx / distance;
                 let y_displacement = attraction * dy / distance;
@@ -145,7 +145,7 @@ impl LayoutAlgorithm for ForceLayout {
             t *= cool;
             if t < 1e-3 { break; }
 
-            println!("{:#?}", &layout);
+            //println!("{:#?}", &layout);
         }
 
         Ok(layout)

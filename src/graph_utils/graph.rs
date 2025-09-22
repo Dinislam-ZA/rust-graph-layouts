@@ -18,8 +18,8 @@ pub struct Edge<T = ()> {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub(crate) struct Graph {
-    pub(super) nodes: Vec<Node>,
-    pub(super) edges: Vec<Edge>,
+    pub(crate) nodes: Vec<Node>,
+    pub(crate) edges: Vec<Edge>,
 }
 
 impl Graph {
@@ -30,6 +30,7 @@ impl Graph {
         }
     }
 
+    // TODO: Унифицировать
     pub fn from_file(filepath: &str) -> Result<Graph, String> {
         let mut file = File::open(filepath).unwrap();
         let mut contents = String::new();
